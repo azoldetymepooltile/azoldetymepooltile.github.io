@@ -1,0 +1,130 @@
+---
+title: Home
+weight: 0
+specialurl: /
+css: home.css
+---
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/jssor.slider.mini.js"></script>
+<div id="slider1_container"  style="position: relative; top: 0px; left: 0px; width: 900px; height: 360px;">
+    <!-- Slides Container -->
+    <div u="slides" style="cursor: move; position: absolute; overflow: hidden; left: 0px; top: 0px; width: 900px; height: 360px;">
+        {% for photo in site.data.slidephotos %}
+        <div><img u="image" src="{{photo.url}}" /></div>
+        {% endfor %}
+    </div>
+    <!-- Help: http://www.jssor.com/development/slider-with-bullet-navigator-jquery.html -->
+    <style>
+        /* jssor slider bullet navigator skin 01 css */
+        /*
+        .jssorb01 div           (normal)
+        .jssorb01 div:hover     (normal mouseover)
+        .jssorb01 .av           (active)
+        .jssorb01 .av:hover     (active mouseover)
+        .jssorb01 .dn           (mousedown)
+        */
+        .jssorb01 {
+            position: absolute;
+        }
+        .jssorb01 div, .jssorb01 div:hover, .jssorb01 .av {
+            position: absolute;
+            /* size of bullet elment */
+            width: 12px;
+            height: 12px;
+            filter: alpha(opacity=70);
+            opacity: .7;
+            overflow: hidden;
+            cursor: pointer;
+            border: #000 1px solid;
+        }
+        .jssorb01 div { background-color: gray; }
+        .jssorb01 div:hover, .jssorb01 .av:hover { background-color: #d3d3d3; }
+        .jssorb01 .av { background-color: #fff; }
+        .jssorb01 .dn, .jssorb01 .dn:hover { background-color: #555555; }
+    </style>
+    <!-- bullet navigator container -->
+    <div u="navigator" class="jssorb01" style="bottom: 16px; right: 10px;">
+        <!-- bullet navigator item prototype -->
+        <div u="prototype"></div>
+    </div>
+    <!-- Help: http://www.jssor.com/development/slider-with-arrow-navigator-jquery.html -->
+    <style>
+        /* jssor slider arrow navigator skin 05 css */
+        /*
+        .jssora05l                  (normal)
+        .jssora05r                  (normal)
+        .jssora05l:hover            (normal mouseover)
+        .jssora05r:hover            (normal mouseover)
+        .jssora05l.jssora05ldn      (mousedown)
+        .jssora05r.jssora05rdn      (mousedown)
+        */
+        .jssora05l, .jssora05r {
+            display: block;
+            position: absolute;
+            /* size of arrow element */
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            background: url(/images/a17.png) no-repeat;
+            overflow: hidden;
+        }
+        .jssora05l { background-position: -10px -40px; }
+        .jssora05r { background-position: -70px -40px; }
+        .jssora05l:hover { background-position: -130px -40px; }
+        .jssora05r:hover { background-position: -190px -40px; }
+        .jssora05l.jssora05ldn { background-position: -250px -40px; }
+        .jssora05r.jssora05rdn { background-position: -310px -40px; }
+    </style>
+    <!-- Arrow Left -->
+        <span u="arrowleft" class="jssora05l" style="top: 123px; left: 8px;">
+        </span>
+    <!-- Arrow Right -->
+        <span u="arrowright" class="jssora05r" style="top: 123px; right: 8px;">
+        </span>
+
+</div>
+<script>
+    jQuery(document).ready(function ($) {
+        var options = {
+            $AutoPlay: true,
+            $SlideDuration: 500,
+            $DragOrientation: 3,
+            $FillMode: 1,
+            $ArrowNavigatorOptions: {                       //[Optional] Options to specify and enable arrow navigator or not
+                $Class: $JssorArrowNavigator$,              //[Requried] Class to create arrow navigator instance
+                $ChanceToShow: 2,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
+                $AutoCenter: 2,                                 //[Optional] Auto center arrows in parent container, 0 No, 1 Horizontal, 2 Vertical, 3 Both, default value is 0
+                $Steps: 1                                       //[Optional] Steps to go for each navigation request, default value is 1
+            },
+            $BulletNavigatorOptions: {
+                $Class: $JssorBulletNavigator$,
+                $ChanceToShow: 2,
+                $AutoCenter: 1,
+                $SpacingX: 10
+            }
+        };
+        var jssor_slider1 = new $JssorSlider$('slider1_container', options);
+    });
+</script>
+
+<div class="promotion">Call now for your free estimate!</div>
+
+<div id="facebook-insert">
+    <iframe scrolling="no" frameborder="0" src="//www.facebook.com/plugins/likebox.php?locale=en_US&amp;href=https://www.facebook.com/pages/Arizona-Olde-Tyme-Pool-Tile-Service/1401279890119500&amp;width=299&amp;height=406&amp;show_faces=False&amp;colorscheme=light&amp;stream=True&amp;header=True&amp;border_color=%23D8DFEA" allowtransparency="false" style="border: medium none; overflow: hidden; width: 299px; height: 406px"></iframe>
+</div>
+
+<h2>Welcome Arizona</h2>
+<div class="section-intro">
+    Whether it's summer or winter time, big pool or small pool, Olde Tyme Pool Tile Service
+    Does all the pool cleaning you want and need.
+</div>
+<p>
+    Everything you need in order to have a great new looking pool starts with us.
+    After you have your pool on for a while and everyone is going in and out, minerals
+    start to accumulate and form into nasty white calcium that looks gross and unappealing.
+    No one would like to swim in that.  Our type of cleaning works wonders and
+    gets rid of all the nasty calcium, scaling, and hard water deposits <span class="emphasis">WITHOUT DAMAGING YOUR TILE</span>.
+    Other companies use Glass Beads which can damage your tile and make it look even older
+    than it is. Here at Olde Tyme we remove calcium by using Maxx Strip, a salt like material
+    which means it has no chance of damaging your tile and it is also <span class="emphasis">ECO-FRIENDLY</span>.
+</p>

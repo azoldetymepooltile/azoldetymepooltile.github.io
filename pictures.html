@@ -1,0 +1,33 @@
+---
+title: Pictures
+weight: 3
+css: pictures.css
+---
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<link rel="stylesheet" href="/css/colorbox.css">
+<script src="/js/jquery.colorbox-min.js"></script>
+<div class="process">
+    <h2 class="intro">You don't have to take our word for it. <div class="emphasis">SEE IT FOR YOURSELF!</div></h2>
+    <h2 class="lead">In the process...</h2>
+    {% for i in (1..5) %}
+    <a class="in-process" href="/images/pictures/process{{i}}.jpg">
+        <img src="/images/pictures/process{{i}}.jpg" />
+    </a>
+    {% endfor %}
+</div>
+<div class="results">
+    <h2 class="lead">Results!</h2>
+    <h3 class="before">Before</h3><h3 class="after">After</h3>
+    {% for i in (1..17) %}
+    <a class="result-pics" href="/images/pictures/before_{{i}}.jpg">
+        <img src="/images/pictures/before_{{i}}.jpg" />
+    </a>
+    <a class="result-pics" href="/images/pictures/after_{{i}}.jpg">
+        <img src="/images/pictures/after_{{i}}.jpg" />
+    </a>
+    {% endfor %}
+</div>
+<script>
+    $('.in-process').colorbox({rel:'in-process', height:'75%'});
+    $('.result-pics').colorbox({rel:'result-pics', height:'75%'});
+</script>

@@ -1,0 +1,170 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    background: #000;
+    background-image: url("/images/pool_background.jpg");
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-attachment: fixed;
+    color: #AAA;
+    font-family: 'Open Sans',sans-serif;
+}
+
+header {
+    height: 100px;
+    width: 10)%;
+    padding: 10px 10px;
+    background-color: rgba(0,0,0,.5);
+    vertical-align: middle;
+}
+
+header a {
+    text-decoration: none;
+}
+
+header .logo {
+    float: left;
+    padding: 0px 15px;
+}
+
+header .full-title {
+    color: #FFF;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+header #site-title {
+    font-size: 45px;
+}
+
+header #site-subtitle {
+    font-size: 12px;
+    font-style: italic;
+    font-weight: bold;
+    float: left;
+}
+
+header #site-callus {
+    float: left;
+    padding-left: 20px;
+    color: #FFFF00;
+}
+
+footer {
+    margin-top: 40px;
+    clear: both;
+}
+
+.header-content {
+    padding: 20px 0;
+    margin: auto;
+    vertical-align: middle;
+    width: 1000px;
+}
+
+#site-menu {
+    padding: 0;
+    border-top: 1px solid #3f3f3f;
+    margin: 0 auto;
+    width: 930px;
+    height: 43px;
+    background: linear-gradient(to bottom,#2a2a2a 1%,#161616 100%);
+}
+
+#site-menu li {
+    display: inline-block;
+    width: auto;
+    border-right: 1px solid #222;
+    margin: 0;
+    padding: 12px 15px;
+    list-style: none;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+#site-menu li a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+#site-menu li:hover a {
+    color: #FF0;
+}
+
+#site-menu li.active a {
+    color: #FF0;
+}
+
+#site-bottom-menu {
+    text-align: center;
+    margin: 50px auto 10px auto;
+}
+
+#site-bottom-menu li {
+    display: inline-block;
+    padding-left: 10px;
+    list-style: none;
+    text-transform: uppercase;
+}
+
+#site-bottom-menu a {
+    text-decoration: none;
+    color: #AAA;
+    font-weight: bold;
+}
+
+#site-bottom-menu .active a {
+    text-decoration: underline;
+}
+
+#site-bottom-menu li:hover a {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+}
+
+#page-body {
+    background: #000;
+    width: 900px;
+    margin: auto;
+    padding: 15px;
+}
+
+h1, h2 {
+    color: #FFF;
+}
+
+h2 {
+    text-transform: uppercase;
+    font-size: 28px;
+}
+
+h3 {
+    color: yellow;
+}
+
+p {
+    font-size: 1em;
+    line-height: 1.7;
+}
+
+.section-intro {
+    color: yellow;
+    font-size: 1em;
+    line-height: 2;
+    text-transform: uppercase;
+}
+
+.emphasis {
+    color: yellow;
+    text-transform: uppercase;
+}
+
+.clear {
+    clear: both;
+}

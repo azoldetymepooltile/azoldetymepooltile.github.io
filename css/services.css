@@ -1,0 +1,36 @@
+.comparison-photo {
+    width: 48%;
+    margin-bottom: 20px;
+}
+.comparison-photo h2 {
+    font-size: 1.3em;
+}
+
+.comparison-photo img {
+    max-width: 100%;
+}
+
+.before-photo {
+    float: left;
+}
+
+.after-photo {
+    float: right;
+}
+
+.howwedo {
+    clear: both;
+    width: 65%;
+    float: left;
+}
+
+.howwedo ol {
+    list-style-type: circle;
+    margin: 0;
+    padding-left: 20px;
+}
+
+.fact {
+    float: right;
+    width: 35%;
+}

@@ -1,0 +1,91 @@
+---
+title: Contact Us
+weight: 4
+css: contactus.css
+---
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script type="text/javascript">
+    var showSuccessDialog = function(data) {
+        showMessage("Thank you! We will contact you soon.")
+    };
+    var showErrorDialog = function(err) {
+        showMessage("There has been an error.  Please call us to receive your free quote!")
+    };
+    var disableForm = function(disable) {
+        $("#submit-button").prop("disabled", disable);
+    };
+    var showMessage = function(message) {
+        $("#status-message").text(message);
+    };
+    var submitForm = function() {
+        disableForm(true);
+        showMessage("Sending request...");
+        $.post('http://formendpoint.appspot.com/',
+                $("#contactus").serialize(), showSuccessDialog, showErrorDialog);
+        return false;
+    };
+    var checkValid = function(element) {
+        disableForm(false);
+    };
+</script>
+<div id="form-status"></div>
+<div class="contactform">
+    <form id="contactus" method="post">
+        <ul>
+            <li>
+                <label class="required" for="name">Name:</label>
+                <input type="text" name="name" onkeyup="checkValid(this)">
+            </li>
+            <li>
+                <label class="required" for="address">Address:</label>
+                <input type="text" name="address" onkeyup="checkValid(this)">
+            </li>
+            <li>
+                <label class="required" for="email">Email:</label>
+                <input type="text" name="email" onkeyup="checkValid(this)">
+            </li>
+            <li>
+                <label class="required" for="city">City:</label>
+                <input type="text" name="city" onkeyup="checkValid(this)">
+            </li>
+            <li>
+                <label class="required" for="phone">Phone:</label>
+                <input type="text" name="phone" onkeyup="checkValid(this)">
+            </li>
+            <li>
+                <label class="required" for="message">Message:</label>
+                <textarea name="message" placeholder="Any comments..."  onkeyup="checkValid(this)"></textarea>
+            </li>
+            <li id="status-message"></li>
+            <li>
+                <button id="submit-button" type="button" onclick="return submitForm();" disabled="true">Submit</button>
+            </li>
+        </ul>
+    </form>
+</div>
+
+<div class="pitch">
+<h2>Request your Free Estimate!</h2>
+<p>
+Arizona is notorious for it's hard water. If your pool has developed white film on its tiles,
+{% if site.data.company.phone %}
+call us at <span class="emphasis">{{site.data.company.phone}}</span> or
+{% endif %}
+fill out the form to your right to receive a fast free estimate on cleaning your pool tile
+and to receive additional information on how to keep your swimming pool looking as good as new!
+</p>
+</div>
+
+<div class="thankyou-wrapper">
+    <div class="thankyou">Thank you!</div>
+</div>
+
+<div id="contact-info">
+    <div class="name">Justin Knight (Owner)</div>
+    {% if site.data.company.phone %}
+    <div class="phone">{{site.data.company.phone}}</div>
+    {% endif %}
+    {% if site.data.company.phone %}
+    <div class="email">{{site.data.company.email}}</div>
+    {% endif %}
+</div>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>
+        {% if page.title %}{{ page.title }} - {% endif %}Pool Tile Cleaners
+    </title>
+    <link rel="stylesheet" href="/css/site.css" />
+    {% if page.css %}<link href="/css/{{ page.css }}?{{site.time}}" rel="stylesheet" />{% endif %}
+    {% if page.meta_keywords %}<meta name="keywords" content="{{ page.meta_keywords }}" />{% endif %}
+    {% if page.meta_description %}<meta name="description" content="{{ page.meta_description }}" />{% endif %}
+    <meta name="author" content="Justin Knight" />
+
+    <link rel="shortcut icon" type="image/ico" href="/favicon.ico" />
+</head>
+<body>
+    <div class="page {% if page.location %}{{ page.location }}{% endif %}">
+        <div class="header">
+            <header>
+                <div class="header-content">
+                    <a href="http://pooltilecleaners.net/">
+                        <div class="logo">
+                            <img src="/images/logo_small.jpg" />
+                        </div>
+                        <div class="full-title">
+                            <div id="site-title">Olde Tyme Pool Tile Service</div>
+                            <div id="site-subtitle">Tile Cleaning Services</div>
+                        </div>
+                    </a>
+                    {% if site.data.company.phone %}
+                    <div id="site-callus">Call us at {{site.data.company.phone}}</div>
+                    {% endif %}
+                    <div id="facebook-info"></div>
+                    <div class="clear"></div>
+                </div>
+            </header>
+            {% assign pages = site.pages | sort:"weight" %}
+            <ol id="site-menu">
+                {% for pageIndex in pages %}
+                    <li id="{{pageIndex.title}}-menuitem" class="menuitem{% if pageIndex.title == page.title %} active{% endif %}">
+                        <a href="{% if pageIndex.specialurl %}{{pageIndex.specialurl}}{% else %}{{pageIndex.url}}{% endif %}">{{pageIndex.title}}</a>
+                    </li>
+                {% endfor %}
+            </ol>
+        </div>
+
+        <div id="page-body">
+            <div class="content">
+                {{ content }}
+            </div>
+
+            <div class="clear"></div>
+
+            <footer>
+                <div class="bottom-menu">
+                    <ol id="site-bottom-menu">
+                        {% for pageIndex in pages %}
+                        <li id="{{pageIndex.title}}-bottommenuitem" class="bottom-menuitem{% if pageIndex.title == page.title %} active{% endif %}">
+                            <a href="{% if pageIndex.specialurl %}{{pageIndex.specialurl}}{% else %}{{pageIndex.url}}{% endif %}">{{pageIndex.title}}</a>
+                        </li>
+                        {% endfor %}
+                    </ol>
+                </div>
+                <div class="footer">
+                    Content &copy; 2015. Arizona Olde Tyme Pool Tile Service, LLC. All rights reserved
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    {% if site.analytics %}
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("{{site.analytics}}");
+            pageTracker._trackPageview();
+        } catch(err) {}
+    </script>
+    {% endif %}
+</body>
+</html>

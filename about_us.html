@@ -1,0 +1,39 @@
+---
+title: About Us
+weight: 1
+css: aboutus.css
+---
+<div class="meet-crew">
+    <h2>Meet the Crew</h2>
+    <ol>
+        {% for employee in site.data.company.employees %}
+        <li class="employee">
+            {% if employee.photo %}<div class="employee-photo"><img src="{{employee.photo}}" /></div>{% endif %}
+            <div class="employee-about">
+                <div class="employee-name">{{employee.name}}</div>
+                <div class="employee-desc">{{employee.description}}</div>
+            </div>
+        </li>
+        {% endfor %}
+    </ol>
+</div>
+<h2>About Us</h2>
+<img src="/images/logo_med.jpg" />
+<p>
+    Arizona Olde Tyme Pool Services has been cleaning pool tiles for years.
+    We provide old fashioned service and use modern, eco-friendly technology
+    to remove scaling and calcium on your pool tiles and water features without
+    harsh chemicals or the tedious and damaging effects of other tools or processes.
+    So if you need pool tile calcium removal, give us a call!
+</p>
+
+<div id="trustworthy">
+<h2>Trustworthy</h2>
+<p>
+    We are <span class="emphasis">trusted</span> by many of the top rated hotels and resorts in the Tucson
+    area to keep their pools looking good, let us help you as well!
+</p>
+</div>
+
+<img src="/images/resort_small.jpg" />
+<img src="/images/resort2_small.jpg" />

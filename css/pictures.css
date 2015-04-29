@@ -1,0 +1,33 @@
+.process, .results {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.process .intro {
+    border-bottom: 1px solid #BBB;
+}
+
+.process .lead {
+    text-align: left;
+}
+
+.results .lead {
+    margin: auto;
+    width: 200px;
+    border-bottom: 1px solid yellow;
+}
+
+.process img, .results img{
+    width: 220px;
+    height: 220px;
+}
+
+.results .before {
+    width: 45%;
+    float: left;
+}
+
+.results .after {
+    width: 45%;
+    float: right;
+}
