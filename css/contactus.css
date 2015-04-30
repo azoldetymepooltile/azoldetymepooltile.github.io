@@ -83,3 +83,8 @@
     -khtml-box-shadow: 0 2px 5px #000;
     box-shadow: 0 2px 5px #000;
 }
+
+.contactform button:disabled{
+    background: #5d5d5d;
+    color: #999;
+}
