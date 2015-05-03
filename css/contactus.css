@@ -1,7 +1,7 @@
 
 .contactform {
     float: right;
-    width: 48%;
+    width: 46%;
     margin-right: 20px;
 }
 
@@ -49,7 +49,7 @@
     color: #FFF;
     border-bottom: 1px solid yellow;
     margin: auto;
-    width: 140px;
+    width: 150px;
 }
 
 #contact-info .name {
