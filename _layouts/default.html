@@ -37,9 +37,11 @@
             {% assign pages = site.pages | sort:"weight" %}
             <ol id="site-menu">
                 {% for pageIndex in pages %}
+                    {% if pageIndex.title %}
                     <li id="{{pageIndex.title}}-menuitem" class="menuitem{% if pageIndex.title == page.title %} active{% endif %}">
                         <a href="{% if pageIndex.specialurl %}{{pageIndex.specialurl}}{% else %}{{pageIndex.url}}{% endif %}">{{pageIndex.title}}</a>
                     </li>
+                    {% endif %}
                 {% endfor %}
             </ol>
         </div>
