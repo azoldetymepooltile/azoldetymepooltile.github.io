@@ -8,9 +8,15 @@ css: contactus.css
 <script type="text/javascript">
     var showSuccessDialog = function(data) {
         showMessage('Thank you! We will contact you soon.');
+        if (ga) {
+            ga('send', 'event', 'form', 'submitted', 'success');
+        }
     };
     var showErrorDialog = function(err) {
         showMessage('There has been an error.  Please call us to receive your free quote!');
+        if (ga) {
+            ga('send', 'event', 'form', 'submitted', 'failure');
+        }
     };
     var disableForm = function() {
         $("#submit-button").prop('disabled', true);
@@ -22,13 +28,19 @@ css: contactus.css
     var submitForm = function() {
         if (isFormEmpty()) {
             showMessage('Please enter your information before submitting...');
+            if (ga) {
+                ga('send', 'event', 'form', 'submitted', 'empty');
+            }
             return;
         }
-        disableForm();
-        showMessage('Sending request...');
         $.post('http://formendpoint.appspot.com/', $('#contactus').serialize())
             .done(showSuccessDialog)
             .fail(showErrorDialog);
+        disableForm();
+        showMessage('Sending request...');
+        if (ga) {
+            ga('send', 'event', 'form', 'submitted', 'attempt');
+        }
         return false;
     };
     var isFormEmpty = function() {
