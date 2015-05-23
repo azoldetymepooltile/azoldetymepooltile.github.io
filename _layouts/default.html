@@ -8,7 +8,12 @@
     <link rel="stylesheet" href="/css/site.css" />
     {% if page.css %}<link href="/css/{{ page.css }}?{{site.time}}" rel="stylesheet" />{% endif %}
     {% if page.meta_keywords %}<meta name="keywords" content="{{ page.meta_keywords }}" />{% endif %}
-    {% if page.meta_description %}<meta name="description" content="{{ page.meta_description }}" />{% endif %}
+    {% if page.meta_description %}
+    <meta name="description" content="{{ page.meta_description }}" />
+    <meta property="og:description" content="{{ page.meta_description }}">
+    {% endif %}
+    <meta property="og:site_name" content="{% if page.title %}{{ page.title }} - {% endif %}Pool Tile Cleaners">
+    <meta property="og:url" content="http://www.pooltilecleaners.net{% if page.specialurl %}{{page.specialurl}}{% else %}{{page.url}}{% endif %}">
     <meta name="author" content="Justin Knight" />
 
     <link rel="shortcut icon" type="image/ico" href="/favicon.ico" />
